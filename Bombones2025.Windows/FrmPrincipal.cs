@@ -39,5 +39,18 @@ namespace Bombones2025.Windows
             frm.ShowDialog(this);
 
         }
+
+        private void BtnRellenos_Click(object sender, EventArgs e)
+        {
+            RellenoServicio servicio = new RellenoServicio("Rellenos.txt");
+            FrmRellenos frm = new FrmRellenos(servicio) { Text = "Listado de rellenos" };
+            frm.ShowDialog(this);
+
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
