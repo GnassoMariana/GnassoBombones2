@@ -30,6 +30,7 @@
         {
             BtnPaises = new Button();
             btnFrutos = new Button();
+            BtnChocolate = new Button();
             SuspendLayout();
             // 
             // BtnPaises
@@ -53,11 +54,22 @@
             btnFrutos.UseVisualStyleBackColor = true;
             btnFrutos.Click += btnFrutos_Click;
             // 
+            // BtnChocolate
+            // 
+            BtnChocolate.Location = new Point(361, 62);
+            BtnChocolate.Name = "BtnChocolate";
+            BtnChocolate.Size = new Size(94, 70);
+            BtnChocolate.TabIndex = 2;
+            BtnChocolate.Text = "Chocolates";
+            BtnChocolate.UseVisualStyleBackColor = true;
+            BtnChocolate.Click += BtnChocolate_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(BtnChocolate);
             Controls.Add(btnFrutos);
             Controls.Add(BtnPaises);
             Margin = new Padding(3, 4, 3, 4);
@@ -70,5 +82,6 @@
 
         private Button BtnPaises;
         private Button btnFrutos;
+        private Button BtnChocolate;
     }
 }

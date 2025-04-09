@@ -31,5 +31,13 @@ namespace Bombones2025.Windows
             FrmFrutosSecos frm = new FrmFrutosSecos(servicio) { Text = "Lista de frutos secos:" };
             frm.ShowDialog(this);
         }
+
+        private void BtnChocolate_Click(object sender, EventArgs e)
+        {
+            ChocolateServicio servicio = new ChocolateServicio("Chocolates.txt");
+            FrmChocolates frm = new FrmChocolates(servicio) { Text = "Listado de chocolates" };
+            frm.ShowDialog(this);
+
+        }
     }
 }

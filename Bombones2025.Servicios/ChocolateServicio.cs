@@ -12,11 +12,34 @@ namespace Bombones2025.Servicios
             _chocolateRepositorio = new ChocolateRepositorio(ruta);
         }
 
+        public void Borrar(Chocolate chocoBorrar)
+        {
+             _chocolateRepositorio.Borrar(chocoBorrar);
+        }
+
+        public bool Existe(Chocolate choco)
+        {
+            return _chocolateRepositorio.Existe(choco);
+        }
+
         public List<Chocolate> GetChocolates()
         {
             return _chocolateRepositorio.GetChocolates();
         }
+
+        public void Guardar(Chocolate choco)
+        {
+            if (choco.ChocolateId== 0)
+            {
+                _chocolateRepositorio.Guardar(choco);
+
+            }
+            else
+            {
+                _chocolateRepositorio.Editar(choco);
+            }
+        }
     }
 }
-   
+
 

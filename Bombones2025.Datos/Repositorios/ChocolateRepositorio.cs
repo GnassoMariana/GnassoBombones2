@@ -19,7 +19,7 @@ namespace Bombones2025.Datos.Repositorios
         }
         public List<Chocolate> GetChocolates()
         {
-            return chocolates;
+            return chocolates.OrderBy(c=> c.Descripcion).ToList();
         }
 
         private void LeerDatos()
@@ -46,6 +46,69 @@ namespace Bombones2025.Datos.Repositorios
                 Descripcion = descripcion,
                 ChocolateId = chocolateId
             };
+        }
+        private int SetearChocolateId()
+        {
+            return chocolates.Max(c => c.ChocolateId) + 1;
+        }
+
+        public bool Existe(Chocolate chocolate)
+        {
+            if (chocolate.ChocolateId == 0)
+            {
+                return chocolates.Any(c => c.Descripcion == chocolate.Descripcion);
+            }
+            else
+            {
+                return chocolates.Any(c => c.Descripcion == chocolate.Descripcion && c.ChocolateId != chocolate.ChocolateId);
+
+            }
+        }
+
+        public void Guardar(Chocolate choco)
+        {
+            choco.ChocolateId = SetearChocolateId();
+            chocolates.Add(choco);
+            //if(File.Exists(ruta))
+            //{
+            //    var registros = File.ReadAllLines(ruta);
+            //    if(string.IsNullOrEmpty(registros) && !registros.EndsWith(Environment.NewLine))
+            //    {
+            //        File.WriteAllText(ruta, Environment.NewLine);
+            //    }
+                
+            //}
+            using (var escritor= new StreamWriter(ruta, true))
+            {
+                string linea = ConstruirLinea(choco);
+                escritor.WriteLine(linea);
+            }
+        }
+
+        private string ConstruirLinea(Chocolate choco)
+        {
+           return $"{choco.ChocolateId}|{choco.Descripcion}";
+        }
+
+        public void Borrar(Chocolate chocoBorrar)
+        {
+            var choco = chocolates.FirstOrDefault(c => c.Descripcion == chocoBorrar.Descripcion);
+            if (choco is null) return;
+
+            chocolates.Remove(choco);
+
+            var registros = chocolates.Select(c => ConstruirLinea(c)).ToArray();
+            File.WriteAllLines(ruta, registros);
+        }
+
+        public void Editar(Chocolate choco)
+        {
+            var chocoEditado= chocolates.FirstOrDefault(c => c.ChocolateId == choco.ChocolateId);
+            if(chocoEditado is null) return;
+            chocoEditado.Descripcion = choco.Descripcion;
+            var registros = chocolates.Select(c => ConstruirLinea(c)).ToArray();
+            File.WriteAllLines(ruta, registros);
+
         }
     }
 }
