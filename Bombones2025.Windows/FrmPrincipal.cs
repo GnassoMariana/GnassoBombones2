@@ -24,5 +24,12 @@ namespace Bombones2025.Windows
             FrmPaises frm = new FrmPaises(servicio) { Text = "Listado de Paises" };
             frm.ShowDialog(this);
         }
+
+        private void btnFrutos_Click(object sender, EventArgs e)
+        {
+            FrutoSecoServicio servicio = new FrutoSecoServicio("FrutosSecos.txt");
+            FrmFrutosSecos frm = new FrmFrutosSecos(servicio) { Text = "Lista de frutos secos:" };
+            frm.ShowDialog(this);
+        }
     }
 }

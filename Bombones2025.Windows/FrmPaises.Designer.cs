@@ -1,6 +1,6 @@
 ﻿namespace Bombones2025.Windows
 {
-    partial class FrmPaises
+    partial class FrmPaises 
     {
         /// <summary>
         /// Required designer variable.

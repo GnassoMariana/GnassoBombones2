@@ -11,10 +11,36 @@ namespace Bombones2025.Servicios
             _frutoRepositorio = new FrutoSecoRepositorio(ruta);
         }
 
-
-        public List<FrutoSeco> GetLista()
+        public void Borrar(FrutoSeco frutoParaBorrar)
         {
-            return _frutoRepositorio.GetLista();
+           _frutoRepositorio.Borrar(frutoParaBorrar);
         }
+
+        public bool Existe(FrutoSeco fruto)
+        {
+            return  _frutoRepositorio.Existe(fruto);
+        }
+
+        public List<FrutoSeco> GetFrutos()
+        {
+            return _frutoRepositorio.GetFrutos();
+        }
+
+        public void Guardar(FrutoSeco fruto)
+        {
+            if (fruto.FrutoSecoId == 0)
+            {
+                _frutoRepositorio.Guardar(fruto);
+
+            }
+            else
+            {
+                _frutoRepositorio.Editar(fruto);
+            }
+        }
+        //public List<FrutoSeco> GetLista()
+        //{
+        //    return _frutoRepositorio.GetLista();
+        //}
     }
 }

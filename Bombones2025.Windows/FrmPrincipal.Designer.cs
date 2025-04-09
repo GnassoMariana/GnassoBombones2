@@ -29,24 +29,38 @@
         private void InitializeComponent()
         {
             BtnPaises = new Button();
+            btnFrutos = new Button();
             SuspendLayout();
             // 
             // BtnPaises
             // 
-            BtnPaises.Location = new Point(40, 46);
+            BtnPaises.Location = new Point(46, 61);
+            BtnPaises.Margin = new Padding(3, 4, 3, 4);
             BtnPaises.Name = "BtnPaises";
-            BtnPaises.Size = new Size(87, 54);
+            BtnPaises.Size = new Size(99, 72);
             BtnPaises.TabIndex = 0;
             BtnPaises.Text = "Países";
             BtnPaises.UseVisualStyleBackColor = true;
             BtnPaises.Click += BtnPaises_Click;
             // 
+            // btnFrutos
+            // 
+            btnFrutos.Location = new Point(204, 62);
+            btnFrutos.Name = "btnFrutos";
+            btnFrutos.Size = new Size(94, 70);
+            btnFrutos.TabIndex = 1;
+            btnFrutos.Text = "Frutos secos";
+            btnFrutos.UseVisualStyleBackColor = true;
+            btnFrutos.Click += btnFrutos_Click;
+            // 
             // FrmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(btnFrutos);
             Controls.Add(BtnPaises);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmPrincipal";
             Text = "FrmPrincipal";
             ResumeLayout(false);
@@ -55,5 +69,6 @@
         #endregion
 
         private Button BtnPaises;
+        private Button btnFrutos;
     }
 }

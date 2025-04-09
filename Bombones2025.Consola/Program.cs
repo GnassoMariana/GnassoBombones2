@@ -63,7 +63,7 @@ public class Program
         Console.Clear();
         Console.WriteLine("\nLista de frutos secos:");
 
-        List<FrutoSeco> frutosSecos = servicioFrutoSeco.GetLista();
+        List<FrutoSeco> frutosSecos = servicioFrutoSeco.GetFrutos();
         if (frutosSecos.Count == 0)
         {
             Console.WriteLine("No hay frutos secos disponibles.");
