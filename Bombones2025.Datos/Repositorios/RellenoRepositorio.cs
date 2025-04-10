@@ -47,6 +47,65 @@ namespace Bombones2025.Datos.Repositorios
                 RellenoId = rellenoId
             };
         }
+
+        public bool Existe(Relleno relleno)
+        {
+            return relleno.RellenoId ==0? rellenos.Any(r => r.Descripcion == relleno.Descripcion) :
+                rellenos.Any(r => r.Descripcion == relleno.Descripcion && r.RellenoId != relleno.RellenoId);
+        }
+
+        public void Guardar(Relleno relleno)
+        {
+            relleno.RellenoId = SetearRellenoId();
+            rellenos.Add(relleno);
+            if(File.Exists(ruta))
+            {
+                var registros = File.ReadAllText(ruta);
+                if(!string.IsNullOrEmpty(registros) && !registros.EndsWith(Environment.NewLine))
+                {
+                   File.WriteAllText(ruta, Environment.NewLine);
+                }
+            }
+            using(var escritor = new StreamWriter(ruta, true))
+            {
+                string linea = ConstruirLinea(relleno);
+                escritor.WriteLine(linea);
+            }
+        }
+
+        private string ConstruirLinea(Relleno relleno)
+        {
+            return $"{relleno.RellenoId}|{relleno.Descripcion}";
+        }
+
+        private int SetearRellenoId()
+        {
+            return rellenos.Max(r => r.RellenoId) + 1;
+        }
+
+        public void Editar(Relleno relleno)
+        {
+            var rellenoEditado = rellenos.FirstOrDefault(r => r.RellenoId == relleno.RellenoId);
+            if(rellenoEditado is null)
+            {
+                return;
+            }
+            rellenoEditado.Descripcion = relleno.Descripcion;
+            var registros = rellenos.Select(r => ConstruirLinea(r)).ToArray();
+            File.WriteAllLines(ruta, registros);
+        }
+
+        public void Borrar(Relleno relleno)
+        {
+            Relleno rellenoBorrar= rellenos.FirstOrDefault(r=> r.Descripcion == relleno.Descripcion)!;
+            if (rellenoBorrar is null)
+            {
+                return;
+            }
+            rellenos.Remove(rellenoBorrar);
+            var registros = rellenos.Select(r => ConstruirLinea(r)).ToArray();
+            File.WriteAllLines(ruta, registros);
+        }
     }
     
 }

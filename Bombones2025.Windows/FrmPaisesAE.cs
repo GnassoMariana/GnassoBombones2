@@ -35,7 +35,7 @@ namespace Bombones2025.Windows
                 {
                     pais = new Pais();
 
-                }  
+                }
                 pais.NombrePais = TxtPais.Text;
 
                 DialogResult = DialogResult.OK;
@@ -58,6 +58,11 @@ namespace Bombones2025.Windows
         public void SetPais(Pais pais)
         {
             this.pais = pais;
+        }
+
+        private void FrmPaisesAE_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

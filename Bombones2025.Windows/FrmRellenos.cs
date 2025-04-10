@@ -52,5 +52,80 @@ namespace Bombones2025.Windows
             r.Cells[1].Value = relleno.Descripcion;
             r.Tag = relleno;
         }
+
+        private void TsbNuevo_Click(object sender, EventArgs e)
+        {
+            FrmRellenosAE frm = new FrmRellenosAE() { Text = "Nuevo Relleno" };
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel) return;
+            Relleno relleno = frm.GetRelleno();
+            if (relleno == null) return;
+            if (!_rellenoServicio.Existe(relleno))
+            {
+                _rellenoServicio.Guardar(relleno);
+                DataGridViewRow r = new DataGridViewRow();
+                r.CreateCells(dgvDatos);
+                SetearFila(r, relleno);
+                AgregarFila(r);
+                MessageBox.Show("Relleno agregado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("El relleno ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void TsbCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TsbEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var r = dgvDatos.SelectedRows[0];
+            Relleno relleno = (Relleno)r.Tag!;
+            FrmRellenosAE frm = new FrmRellenosAE() { Text = "Editar Relleno" };
+            frm.SetRelleno(relleno);
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel) return;
+            relleno = frm.GetRelleno();
+            if (relleno == null) return;
+            if (!_rellenoServicio.Existe(relleno))
+            {
+                _rellenoServicio.Guardar(relleno);
+                SetearFila(r, relleno);
+                MessageBox.Show("Relleno editado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("El relleno ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TsbBorrar_Click(object sender, EventArgs e)
+        {
+            if(dgvDatos.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            var r = dgvDatos.SelectedRows[0];
+            Relleno relleno = (Relleno)r.Tag!;
+            DialogResult dr = MessageBox.Show($"Borrar  {relleno}?", "Confirmar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.No) return;
+            _rellenoServicio.Borrar(relleno);
+            dgvDatos.Rows.Remove(r);
+            MessageBox.Show("Relleno borrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

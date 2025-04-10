@@ -17,9 +17,32 @@ namespace Bombones2025.Servicios
             _rellenoRepositorio = new RellenoRepositorio(ruta);
         }
 
+        public void Borrar(Relleno relleno)
+        {
+            _rellenoRepositorio.Borrar(relleno);
+        }
+
+        public bool Existe(Relleno relleno)
+        {
+            return _rellenoRepositorio.Existe(relleno);
+        }
+
         public List<Relleno> GetRellenos()
         {
             return _rellenoRepositorio.GetRellenos();
+        }
+
+        public void Guardar(Relleno relleno)
+        {
+           if (relleno.RellenoId == 0)
+           {
+                _rellenoRepositorio.Guardar(relleno);
+           }
+           else
+            {
+                _rellenoRepositorio.Editar(relleno);
+            }
+            
         }
     }
 }

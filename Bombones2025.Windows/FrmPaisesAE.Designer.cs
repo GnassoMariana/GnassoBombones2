@@ -40,18 +40,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 43);
+            label1.Location = new Point(47, 57);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(37, 20);
             label1.TabIndex = 0;
             label1.Text = "País:";
             // 
             // TxtPais
             // 
-            TxtPais.Location = new Point(78, 40);
+            TxtPais.Location = new Point(89, 53);
+            TxtPais.Margin = new Padding(3, 4, 3, 4);
             TxtPais.MaxLength = 200;
             TxtPais.Name = "TxtPais";
-            TxtPais.Size = new Size(377, 23);
+            TxtPais.Size = new Size(430, 27);
             TxtPais.TabIndex = 1;
             // 
             // errorProvider1
@@ -60,9 +61,10 @@
             // 
             // BtnOK
             // 
-            BtnOK.Location = new Point(58, 135);
+            BtnOK.Location = new Point(66, 180);
+            BtnOK.Margin = new Padding(3, 4, 3, 4);
             BtnOK.Name = "BtnOK";
-            BtnOK.Size = new Size(75, 52);
+            BtnOK.Size = new Size(86, 69);
             BtnOK.TabIndex = 2;
             BtnOK.Text = "OK";
             BtnOK.UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@
             // 
             // BtnCancelar
             // 
-            BtnCancelar.Location = new Point(380, 135);
+            BtnCancelar.Location = new Point(434, 180);
+            BtnCancelar.Margin = new Padding(3, 4, 3, 4);
             BtnCancelar.Name = "BtnCancelar";
-            BtnCancelar.Size = new Size(75, 52);
+            BtnCancelar.Size = new Size(86, 69);
             BtnCancelar.TabIndex = 2;
             BtnCancelar.Text = "Cancelar";
             BtnCancelar.UseVisualStyleBackColor = true;
@@ -80,15 +83,17 @@
             // 
             // FrmPaisesAE
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(532, 210);
+            ClientSize = new Size(608, 280);
             Controls.Add(BtnCancelar);
             Controls.Add(BtnOK);
             Controls.Add(TxtPais);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmPaisesAE";
             Text = "FrmPaisesAE";
+            Load += FrmPaisesAE_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();

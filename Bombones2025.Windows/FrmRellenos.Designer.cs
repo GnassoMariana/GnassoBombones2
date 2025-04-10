@@ -49,9 +49,9 @@
             BtnAnterior = new Button();
             BtnPrimero = new Button();
             dgvDatos = new DataGridView();
-            splitContainer1 = new SplitContainer();
             colId = new DataGridViewTextBoxColumn();
             colRellenos = new DataGridViewTextBoxColumn();
+            splitContainer1 = new SplitContainer();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -69,6 +69,7 @@
             toolStrip1.Size = new Size(800, 67);
             toolStrip1.TabIndex = 6;
             toolStrip1.Text = "toolStrip1";
+            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
             // 
             // TsbNuevo
             // 
@@ -79,6 +80,7 @@
             TsbNuevo.Size = new Size(56, 64);
             TsbNuevo.Text = "Nuevo";
             TsbNuevo.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbNuevo.Click += TsbNuevo_Click;
             // 
             // TsbBorrar
             // 
@@ -89,6 +91,7 @@
             TsbBorrar.Size = new Size(54, 64);
             TsbBorrar.Text = "Borrar";
             TsbBorrar.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbBorrar.Click += TsbBorrar_Click;
             // 
             // TsbEditar
             // 
@@ -99,6 +102,7 @@
             TsbEditar.Size = new Size(52, 64);
             TsbEditar.Text = "Editar";
             TsbEditar.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbEditar.Click += TsbEditar_Click;
             // 
             // toolStripSeparator1
             // 
@@ -154,6 +158,7 @@
             TsbCerrar.Size = new Size(53, 64);
             TsbCerrar.Text = "Cerrar";
             TsbCerrar.TextImageRelation = TextImageRelation.ImageAboveText;
+            TsbCerrar.Click += TsbCerrar_Click;
             // 
             // TxtCantidadPaginas
             // 
@@ -244,8 +249,7 @@
             dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDatos.Columns.AddRange(new DataGridViewColumn[] { colId, colRellenos });
-            dgvDatos.Dock = DockStyle.Fill;
-            dgvDatos.Location = new Point(0, 0);
+            dgvDatos.Location = new Point(0, 71);
             dgvDatos.Margin = new Padding(3, 4, 3, 4);
             dgvDatos.MultiSelect = false;
             dgvDatos.Name = "dgvDatos";
@@ -253,8 +257,25 @@
             dgvDatos.RowHeadersVisible = false;
             dgvDatos.RowHeadersWidth = 51;
             dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDatos.Size = new Size(800, 359);
+            dgvDatos.Size = new Size(800, 288);
             dgvDatos.TabIndex = 2;
+            // 
+            // colId
+            // 
+            colId.HeaderText = "Id";
+            colId.MinimumWidth = 6;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
+            colId.Width = 125;
+            // 
+            // colRellenos
+            // 
+            colRellenos.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colRellenos.HeaderText = "Rellenos";
+            colRellenos.MinimumWidth = 6;
+            colRellenos.Name = "colRellenos";
+            colRellenos.ReadOnly = true;
             // 
             // splitContainer1
             // 
@@ -282,23 +303,6 @@
             splitContainer1.SplitterDistance = 359;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 7;
-            // 
-            // colId
-            // 
-            colId.HeaderText = "Id";
-            colId.MinimumWidth = 6;
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Visible = false;
-            colId.Width = 125;
-            // 
-            // colRellenos
-            // 
-            colRellenos.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colRellenos.HeaderText = "Rellenos";
-            colRellenos.MinimumWidth = 6;
-            colRellenos.Name = "colRellenos";
-            colRellenos.ReadOnly = true;
             // 
             // FrmRellenos
             // 

@@ -68,6 +68,7 @@
             BtnCancelar.TabIndex = 5;
             BtnCancelar.Text = "Cancelar";
             BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // BtnOK
             // 
@@ -78,6 +79,7 @@
             BtnOK.TabIndex = 6;
             BtnOK.Text = "OK";
             BtnOK.UseVisualStyleBackColor = true;
+            BtnOK.Click += BtnOK_Click;
             // 
             // FrmRellenosAE
             // 
@@ -90,6 +92,7 @@
             Controls.Add(BtnOK);
             Name = "FrmRellenosAE";
             Text = "FrmRellenosAE";
+            Load += FrmRellenosAE_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
