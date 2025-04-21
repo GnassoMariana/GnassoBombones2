@@ -19,7 +19,7 @@ namespace Bombones2025.Datos.Repositorios
         }
         public List<Relleno> GetRellenos()
         {
-            return rellenos;
+            return rellenos.OrderBy(r=>r.Descripcion).ToList();
         }
 
         private void LeerDatos()

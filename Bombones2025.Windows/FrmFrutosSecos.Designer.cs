@@ -256,7 +256,7 @@
             dgvDatos.RowHeadersVisible = false;
             dgvDatos.RowHeadersWidth = 51;
             dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDatos.Size = new Size(1139, 430);
+            dgvDatos.Size = new Size(1139, 355);
             dgvDatos.TabIndex = 2;
             // 
             // colId

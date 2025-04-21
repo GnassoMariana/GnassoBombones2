@@ -33,20 +33,10 @@ namespace Bombones2025.Datos.Repositorios
             var registros = File.ReadAllLines(ruta);
             foreach (var registro in registros)
             {
-                if(string.IsNullOrWhiteSpace(registro))
-                {
-                    continue;
-                }
-                try
-                {
-                    FrutoSeco fruto = ConstruirFruto(registro);
-                    frutosSecos.Add(fruto);
+                
+                 FrutoSeco fruto = ConstruirFruto(registro);
+                 frutosSecos.Add(fruto);
 
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception($"Error al leer el registro {registro}", ex);
-                }
             }
 
         }
@@ -108,7 +98,7 @@ namespace Bombones2025.Datos.Repositorios
 
         private string ConstruirLinea(FrutoSeco fruto)
         {
-            return $"{fruto.FrutoSecoId}| {fruto.Descripcion}";
+            return $"{fruto.FrutoSecoId}|{fruto.Descripcion}";
         }
 
         public void Borrar(FrutoSeco frutoParaBorrar)

@@ -8,3 +8,13 @@
 8|Castañas de Caju
 9|Semillas
 10|Ciruelas
+11|Higos secos
+12|Dátiles
+13|Piñones
+14|Coco rallado
+15|Arándanos secos
+16|Moras secas
+17|Chips de banana
+18|Papaya seca
+19|Mango seco
+20|Ananá seco

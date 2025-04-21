@@ -67,7 +67,7 @@ namespace Bombones2025.Windows
             Chocolate choco = frm.GetChocolate();
             if (choco == null) return;
 
-            if (_chocolateServicio.Existe(choco))
+            if (!_chocolateServicio.Existe(choco))
             {
                 _chocolateServicio.Guardar(choco);
                 DataGridViewRow r = new DataGridViewRow();
@@ -79,7 +79,7 @@ namespace Bombones2025.Windows
             }
             else
             {
-                MessageBox.Show("Él chocolate ya existe", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El chocolate ya existe", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

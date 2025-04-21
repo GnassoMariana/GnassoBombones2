@@ -8,3 +8,8 @@
 8|Chocolate 70%
 9|Chocolate sin azúcar
 10|Chocolate con almendras
+11|Chocolate con avellanas
+12|Chocolate con maní
+13|Chocolate con pasas
+14|Chocolate amargo 85%
+15|Chocolate con menta

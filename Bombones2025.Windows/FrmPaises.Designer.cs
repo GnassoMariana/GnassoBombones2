@@ -63,7 +63,8 @@
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 62);
+            splitContainer1.Location = new Point(0, 67);
+            splitContainer1.Margin = new Padding(3, 4, 3, 4);
             splitContainer1.Name = "splitContainer1";
             splitContainer1.Orientation = Orientation.Horizontal;
             // 
@@ -81,8 +82,9 @@
             splitContainer1.Panel2.Controls.Add(BtnSiguiente);
             splitContainer1.Panel2.Controls.Add(BtnAnterior);
             splitContainer1.Panel2.Controls.Add(BtnPrimero);
-            splitContainer1.Size = new Size(800, 555);
-            splitContainer1.SplitterDistance = 444;
+            splitContainer1.Size = new Size(914, 756);
+            splitContainer1.SplitterDistance = 604;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 5;
             // 
             // dgvDatos
@@ -95,59 +97,67 @@
             dgvDatos.Columns.AddRange(new DataGridViewColumn[] { colId, colPais });
             dgvDatos.Dock = DockStyle.Fill;
             dgvDatos.Location = new Point(0, 0);
+            dgvDatos.Margin = new Padding(3, 4, 3, 4);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.ReadOnly = true;
             dgvDatos.RowHeadersVisible = false;
+            dgvDatos.RowHeadersWidth = 51;
             dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDatos.Size = new Size(800, 444);
+            dgvDatos.Size = new Size(914, 604);
             dgvDatos.TabIndex = 2;
+            dgvDatos.CellContentClick += dgvDatos_CellContentClick;
             // 
             // colId
             // 
             colId.HeaderText = "Id";
+            colId.MinimumWidth = 6;
             colId.Name = "colId";
             colId.ReadOnly = true;
             colId.Visible = false;
+            colId.Width = 125;
             // 
             // colPais
             // 
             colPais.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             colPais.HeaderText = "País";
+            colPais.MinimumWidth = 6;
             colPais.Name = "colPais";
             colPais.ReadOnly = true;
             // 
             // TxtCantidadPaginas
             // 
-            TxtCantidadPaginas.Location = new Point(176, 38);
+            TxtCantidadPaginas.Location = new Point(201, 51);
+            TxtCantidadPaginas.Margin = new Padding(3, 4, 3, 4);
             TxtCantidadPaginas.Name = "TxtCantidadPaginas";
             TxtCantidadPaginas.ReadOnly = true;
-            TxtCantidadPaginas.Size = new Size(85, 23);
+            TxtCantidadPaginas.Size = new Size(97, 27);
             TxtCantidadPaginas.TabIndex = 19;
             // 
             // CboPaginas
             // 
             CboPaginas.DropDownStyle = ComboBoxStyle.DropDownList;
             CboPaginas.FormattingEnabled = true;
-            CboPaginas.Location = new Point(73, 38);
+            CboPaginas.Location = new Point(83, 51);
+            CboPaginas.Margin = new Padding(3, 4, 3, 4);
             CboPaginas.Name = "CboPaginas";
-            CboPaginas.Size = new Size(68, 23);
+            CboPaginas.Size = new Size(77, 28);
             CboPaginas.TabIndex = 18;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(147, 41);
+            label2.Location = new Point(168, 55);
             label2.Name = "label2";
-            label2.Size = new Size(23, 15);
+            label2.Size = new Size(29, 20);
             label2.TabIndex = 16;
             label2.Text = "de:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 41);
+            label1.Location = new Point(39, 55);
             label1.Name = "label1";
-            label1.Size = new Size(33, 15);
+            label1.Size = new Size(39, 20);
             label1.TabIndex = 17;
             label1.Text = "Pág.:";
             // 
@@ -155,9 +165,10 @@
             // 
             BtnUltimo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnUltimo.Image = Properties.Resources.last_24px;
-            BtnUltimo.Location = new Point(691, 33);
+            BtnUltimo.Location = new Point(790, 44);
+            BtnUltimo.Margin = new Padding(3, 4, 3, 4);
             BtnUltimo.Name = "BtnUltimo";
-            BtnUltimo.Size = new Size(75, 41);
+            BtnUltimo.Size = new Size(86, 55);
             BtnUltimo.TabIndex = 12;
             BtnUltimo.UseVisualStyleBackColor = true;
             // 
@@ -165,9 +176,10 @@
             // 
             BtnSiguiente.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSiguiente.Image = Properties.Resources.next_24px;
-            BtnSiguiente.Location = new Point(610, 33);
+            BtnSiguiente.Location = new Point(697, 44);
+            BtnSiguiente.Margin = new Padding(3, 4, 3, 4);
             BtnSiguiente.Name = "BtnSiguiente";
-            BtnSiguiente.Size = new Size(75, 41);
+            BtnSiguiente.Size = new Size(86, 55);
             BtnSiguiente.TabIndex = 13;
             BtnSiguiente.UseVisualStyleBackColor = true;
             // 
@@ -175,9 +187,10 @@
             // 
             BtnAnterior.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnAnterior.Image = Properties.Resources.previous_24px;
-            BtnAnterior.Location = new Point(529, 33);
+            BtnAnterior.Location = new Point(605, 44);
+            BtnAnterior.Margin = new Padding(3, 4, 3, 4);
             BtnAnterior.Name = "BtnAnterior";
-            BtnAnterior.Size = new Size(75, 41);
+            BtnAnterior.Size = new Size(86, 55);
             BtnAnterior.TabIndex = 14;
             BtnAnterior.UseVisualStyleBackColor = true;
             // 
@@ -185,9 +198,10 @@
             // 
             BtnPrimero.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnPrimero.Image = Properties.Resources.first_24px;
-            BtnPrimero.Location = new Point(448, 33);
+            BtnPrimero.Location = new Point(512, 44);
+            BtnPrimero.Margin = new Padding(3, 4, 3, 4);
             BtnPrimero.Name = "BtnPrimero";
-            BtnPrimero.Size = new Size(75, 41);
+            BtnPrimero.Size = new Size(86, 55);
             BtnPrimero.TabIndex = 15;
             BtnPrimero.UseVisualStyleBackColor = true;
             // 
@@ -197,7 +211,7 @@
             TsbNuevo.ImageScaling = ToolStripItemImageScaling.None;
             TsbNuevo.ImageTransparentColor = Color.Magenta;
             TsbNuevo.Name = "TsbNuevo";
-            TsbNuevo.Size = new Size(46, 59);
+            TsbNuevo.Size = new Size(56, 64);
             TsbNuevo.Text = "Nuevo";
             TsbNuevo.TextImageRelation = TextImageRelation.ImageAboveText;
             TsbNuevo.Click += TsbNuevo_Click;
@@ -208,7 +222,7 @@
             TsbBorrar.ImageScaling = ToolStripItemImageScaling.None;
             TsbBorrar.ImageTransparentColor = Color.Magenta;
             TsbBorrar.Name = "TsbBorrar";
-            TsbBorrar.Size = new Size(44, 59);
+            TsbBorrar.Size = new Size(54, 64);
             TsbBorrar.Text = "Borrar";
             TsbBorrar.TextImageRelation = TextImageRelation.ImageAboveText;
             TsbBorrar.Click += TsbBorrar_Click;
@@ -219,7 +233,7 @@
             TsbEditar.ImageScaling = ToolStripItemImageScaling.None;
             TsbEditar.ImageTransparentColor = Color.Magenta;
             TsbEditar.Name = "TsbEditar";
-            TsbEditar.Size = new Size(44, 59);
+            TsbEditar.Size = new Size(52, 64);
             TsbEditar.Text = "Editar";
             TsbEditar.TextImageRelation = TextImageRelation.ImageAboveText;
             TsbEditar.Click += TsbEditar_Click;
@@ -227,7 +241,7 @@
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 62);
+            toolStripSeparator1.Size = new Size(6, 67);
             // 
             // TsbFiltrar
             // 
@@ -235,7 +249,7 @@
             TsbFiltrar.ImageScaling = ToolStripItemImageScaling.None;
             TsbFiltrar.ImageTransparentColor = Color.Magenta;
             TsbFiltrar.Name = "TsbFiltrar";
-            TsbFiltrar.Size = new Size(44, 59);
+            TsbFiltrar.Size = new Size(51, 64);
             TsbFiltrar.Text = "Filtrar";
             TsbFiltrar.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
@@ -245,14 +259,14 @@
             TsbActualizar.ImageScaling = ToolStripItemImageScaling.None;
             TsbActualizar.ImageTransparentColor = Color.Magenta;
             TsbActualizar.Name = "TsbActualizar";
-            TsbActualizar.Size = new Size(63, 59);
+            TsbActualizar.Size = new Size(79, 64);
             TsbActualizar.Text = "Actualizar";
             TsbActualizar.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 62);
+            toolStripSeparator2.Size = new Size(6, 67);
             // 
             // TsbImprimir
             // 
@@ -260,14 +274,14 @@
             TsbImprimir.ImageScaling = ToolStripItemImageScaling.None;
             TsbImprimir.ImageTransparentColor = Color.Magenta;
             TsbImprimir.Name = "TsbImprimir";
-            TsbImprimir.Size = new Size(57, 59);
+            TsbImprimir.Size = new Size(70, 64);
             TsbImprimir.Text = "Imprimir";
             TsbImprimir.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(6, 62);
+            toolStripSeparator3.Size = new Size(6, 67);
             // 
             // TsbCerrar
             // 
@@ -275,27 +289,30 @@
             TsbCerrar.ImageScaling = ToolStripItemImageScaling.None;
             TsbCerrar.ImageTransparentColor = Color.Magenta;
             TsbCerrar.Name = "TsbCerrar";
-            TsbCerrar.Size = new Size(44, 59);
+            TsbCerrar.Size = new Size(53, 64);
             TsbCerrar.Text = "Cerrar";
             TsbCerrar.TextImageRelation = TextImageRelation.ImageAboveText;
             TsbCerrar.Click += TsbCerrar_Click;
             // 
             // toolStrip1
             // 
+            toolStrip1.ImageScalingSize = new Size(20, 20);
             toolStrip1.Items.AddRange(new ToolStripItem[] { TsbNuevo, TsbBorrar, TsbEditar, toolStripSeparator1, TsbFiltrar, TsbActualizar, toolStripSeparator2, TsbImprimir, toolStripSeparator3, TsbCerrar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 62);
+            toolStrip1.Size = new Size(914, 67);
             toolStrip1.TabIndex = 4;
             toolStrip1.Text = "toolStrip1";
+            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
             // 
             // FrmPaises
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 617);
+            ClientSize = new Size(914, 823);
             Controls.Add(splitContainer1);
             Controls.Add(toolStrip1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmPaises";
             Text = "Paises";
             Load += FrmPaises_Load;
